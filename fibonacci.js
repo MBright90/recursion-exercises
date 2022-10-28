@@ -6,9 +6,7 @@ function recursiveFib(arrayLength) {
     // recursive case
     const array = recursiveFib(arrayLength - 1)
     array.push(array[array.length - 1] + array[array.length - 2])
-    return array[array.length]
+    return array
   }
   
   console.log(recursiveFib(10))
-
-  export default recursiveFib
