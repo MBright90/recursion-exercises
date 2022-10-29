@@ -10,3 +10,6 @@ function recursiveFib(arrayLength) {
   }
   
   console.log(recursiveFib(13))
+  console.log(recursiveFib(22))
+  console.log(recursiveFib(-4))
+  console.log(recursiveFib('12'))
