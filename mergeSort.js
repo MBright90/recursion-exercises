@@ -45,35 +45,36 @@ function mergeSortRevised(array) {
   
     let leftIndex = 0
     let rightIndex = 0
-    let mergedArray = []
+    let mergedArray = [];
 
     // Continue merging until all items have been merged. When all items have been merged on one half,
     // add the entire opposite half to the array and break out of the loop
-    while (leftHalf.length >= leftIndex || rightHalf.length >= rightIndex) {
-        console.log(mergedArray)
+    (() => {
+        while (leftHalf.length >= leftIndex || rightHalf.length >= rightIndex) {
+            console.log(mergedArray)
 
-        // If all the left half items have been included, add the entire right half of the array
-        if (leftHalf.length < leftIndex ) {
-            mergedArray.concat(rightHalf)
-            rightIndex = rightHalf.length + 1
-            leftIndex = leftHalf.length + 1
-            break
-        // If all the right half items have been merged, add the entire left half of the array
-        } else if (rightHalf.length === 0) {
-            mergedArray.concat(leftHalf)
-            rightIndex = rightHalf.length + 1
-            leftIndex = leftHalf.length + 1
-            break
-        // If the next item in the left half is less than the next item in the right half, merge the left item
-        } else if (leftHalf[leftIndex] < rightHalf[rightIndex]) {
-            mergedArray.push(leftHalf[leftIndex])
-            leftIndex += 1
-        // If the next item in the right half is less than the next item in the left half, merge the right item
-        } else {
-            mergedArray.push(rightHalf[rightIndex])
-            rightIndex += 1
-        }
-    }
+            // If all the left half items have been included, add the entire right half of the array
+            if (leftHalf.length < leftIndex ) {
+                mergedArray.concat(rightHalf)
+                rightIndex = rightHalf.length + 1
+                leftIndex = leftHalf.length + 1
+                return
+            // If all the right half items have been merged, add the entire left half of the array
+            } else if (rightHalf.length === 0) {
+                mergedArray.concat(leftHalf)
+                rightIndex = rightHalf.length + 1
+                leftIndex = leftHalf.length + 1
+                return
+            // If the next item in the left half is less than the next item in the right half, merge the left item
+            } else if (leftHalf[leftIndex] < rightHalf[rightIndex]) {
+                mergedArray.push(leftHalf[leftIndex])
+                leftIndex += 1
+            // If the next item in the right half is less than the next item in the left half, merge the right item
+            } else {
+                mergedArray.push(rightHalf[rightIndex])
+                rightIndex += 1
+            }
+    }})()
 
     return mergedArray
 }
