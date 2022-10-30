@@ -49,8 +49,8 @@ function mergeSort(array) {
     if (array.length <= 1) return array
   
     // recursive case
-    const leftHalf = mergeSortRevised(array.slice(0, array.length / 2))
-    const rightHalf = mergeSortRevised(array.slice(array.length / 2))
+    const leftHalf = mergeSort(array.slice(0, array.length / 2))
+    const rightHalf = mergeSort(array.slice(array.length / 2))
   
     let leftIndex = 0
     let rightIndex = 0
