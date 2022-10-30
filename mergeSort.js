@@ -60,7 +60,6 @@ function mergeSort(array) {
     // add the entire opposite half to the array and break out of the loop
     return (() => {
         while (leftHalf.length >= leftIndex || rightHalf.length >= rightIndex) {
-            console.log(mergedArray)
 
             // If all the left half items have been included, add the entire right half of the array and return the array
             // to the next step in the call stack
@@ -84,4 +83,4 @@ function mergeSort(array) {
     }})()
 }
 
-console.log(mergeSortRevised([33, 21, 43, 15, 98, 76, 45, 32]))
+console.log(mergeSort([33, 21, 43, 15, 98, 76, 45, 32, 103, 1, 19, 65, 32]))
