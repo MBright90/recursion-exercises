@@ -61,12 +61,12 @@ function mergeSort(array) {
     return (() => {
         while (leftHalf.length >= leftIndex || rightHalf.length >= rightIndex) {
 
-            // If all the left half items have been included, add the entire right half of the array and return the array
+            // If all the left half items have been included, add the entire remaining right half of the array and return the array
             // to the next step in the call stack
             if (leftHalf.length <= leftIndex ) {
                 mergedArray.push(...rightHalf.slice(rightIndex))
                 return mergedArray
-            // If all the right half items have been merged, add the entire left half of the array and return the array
+            // If all the right half items have been merged, add the entire remaining left half of the array and return the array
             // to the next step in the call stack
             } else if (rightHalf.length <= rightIndex) {
                 mergedArray.push(...leftHalf.slice(leftIndex))
