@@ -30,16 +30,17 @@
 //
 // ######################################################
 
-function binarySearch(array, target, startIndex = 0, endIndex = array.length) {
-    const midIndex = (startIndex + endIndex) / 2
+function binarySearch(array, target, startIndex = 0, endIndex = array.length - 1) {
+    const midIndex = Math.floor((startIndex + endIndex) / 2)
     const midValue = array[midIndex]
 
     if (midValue === target) return midIndex
-    if (midIndex <= 1) return -1
+    if (Math.abs(startIndex - midIndex) <= 1) return -1
 
     if (target < midValue) return binarySearch(array, target, startIndex, midIndex + 1)
     return binarySearch(array, target, midIndex + 1, endIndex)
 }
 
 const testArray = [2, 6, 12, 15, 16, 19, 20, 21, 23, 24, 26, 28, 30, 31, 42, 47, 49, 51, 53, 58, 62, 83, 85, 91, 95]
-console.log(binarySearch(testArray, 30))
+
+console.log(binarySearch(testArray, 83))
