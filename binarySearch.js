@@ -29,3 +29,14 @@
 //   return binarySearch(target, midIndex + 1, end)
 //
 // ######################################################
+
+function binarySearch(array, target, startIndex = 0, endIndex = array.length) {
+    const midIndex = (startIndex + endIndex) / 2
+    const midValue = array[midIndex]
+
+    if (midValue === target) return midIndex
+    if (midIndex <= 1) return -1
+
+    if (target < midValue) return binarySearch(array, target, startIndex, midIndex + 1)
+    return binarySearch(array, target, midIndex + 1, endIndex)
+}
