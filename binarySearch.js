@@ -1,0 +1,31 @@
+// #####################################################
+//
+// Initial Pseudo Code
+//
+// Enter a sorted array object and a target to look for
+// Find the middle index of the array and check that item against the target value
+// If the target is less than the middle item:
+//   Set the new end point of the search to just below the middle value
+// If the target is more than the middle value:
+//  Set the new start point of the search to just above the middle value
+// Recursively call the binary search, passing in the new start and end points.
+// Repeat until an array of single length is found: 
+//   If this is the target, return the index.
+//   If this is not the target, return -1.
+//
+// ######################################################
+//
+// midIndex = (startIndex + endIndex) / 2
+// midValue = array[midIndex]
+//
+// BASE CASE //
+// if midValue === targetValue return midIndex
+// if midIndex < 1 return -1 <-- This acknowledges the target value is not in the array
+//
+// else RECURSIVE CASE
+// if targetValue < midValue
+//   return binarySearch(target, start, midIndex - 1)
+// else 
+//   return binarySearch(target, midIndex + 1, end)
+//
+// ######################################################
