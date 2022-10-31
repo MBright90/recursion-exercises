@@ -40,3 +40,6 @@ function binarySearch(array, target, startIndex = 0, endIndex = array.length) {
     if (target < midValue) return binarySearch(array, target, startIndex, midIndex + 1)
     return binarySearch(array, target, midIndex + 1, endIndex)
 }
+
+const testArray = [2, 6, 12, 15, 16, 19, 20, 21, 23, 24, 26, 28, 30, 31, 42, 47, 49, 51, 53, 58, 62, 83, 85, 91, 95]
+console.log(binarySearch(testArray, 30))
