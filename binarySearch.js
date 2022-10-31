@@ -35,15 +35,11 @@
 
 function binarySearch(array, target, startIndex = 0, endIndex = array.length - 1) {
 
-    const checkArrayLength = (arraySlice) => {
-        if (arraySlice.length > 0) return true
-    }
-
     const midIndex = Math.floor((startIndex + endIndex) / 2)
     const midValue = array[midIndex]
 
     if (midValue === target) return midIndex
-    if (!checkArrayLength(array.slice(startIndex, endIndex))) return -1
+    if (startIndex > endIndex) return -1
 
     if (target < midValue) return binarySearch(array, target, startIndex, midIndex - 1)
     return binarySearch(array, target, midIndex + 1, endIndex)
